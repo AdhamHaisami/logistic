@@ -1,17 +1,20 @@
 import React from 'react';
-import {CardContent} from '@mui/material';
-import {Typography} from '@mui/material';
-import {Card} from '@mui/material';
+import {Card, CardContent, Typography} from '@mui/material';
 
-function MyCard() {
+interface Props{
+  title: string;
+  number: string
+}
+
+const MyCard: React.FC<Props> = ({title, number}) => {
   return (
     <Card sx={{ height: 110 }}>
       <CardContent>
-        <Typography>Total Shipments</Typography>
-        <Typography>31,454</Typography>
+        <Typography>{title}</Typography>
+        <Typography>{number}</Typography>
       </CardContent>
     </Card>
   );
-}
+};
 
 export default MyCard;

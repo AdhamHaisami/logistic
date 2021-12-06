@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../assets/logo.svg';
 import { ReactComponent as HomeLogo } from '../assets/home.svg';
 import { ReactComponent as Settings } from '../assets/settings.svg';
@@ -32,16 +33,28 @@ const SideNav: React.FC = () => {
           alignItems: 'center',
         }}
       >
-        <HomeLogo />
-        <Shipments />
-        <Driver />
-        <Maps />
-        <Settings />
-        <ProfileLogo />
+        <Link to='/'>
+          <HomeLogo />
+        </Link>
+        <Link to='/shipments'>
+          <Shipments />
+        </Link>
+        <Link to='/drivers'>
+          <Driver />
+        </Link>
+        <Link to='/maps'>
+          <Maps />
+        </Link>
+        <Link to='/settings'>
+          <Settings />
+        </Link>
+        <Link to='/profile'>
+          <ProfileLogo />
+        </Link>
         <Exit />
       </div>
     </div>
   );
-}
+};
 
 export default SideNav;
