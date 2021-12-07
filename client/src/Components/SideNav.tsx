@@ -17,20 +17,22 @@ const SideNav: React.FC = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        width: '74px',
+        width: '70px',
         height: '100vh',
         backgroundColor: '#101357',
+        position: 'sticky',
+        top: 0
+
       }}
     >
-      <Logo style={{ marginTop: 32 }} />
+      <Logo style={{ position: 'absolute' , top: 32 }} />
       <div
         style={{
-          flex: 1,
-          // marginTop: '6rem',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-around',
           alignItems: 'center',
+          height: '50%'
         }}
       >
         <Link to='/'>

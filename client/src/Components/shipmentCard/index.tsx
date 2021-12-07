@@ -12,7 +12,7 @@ interface Props{
 
 const ShipmentCard: React.FC<Props> = ({name, from, to, date, time, status}) => {
   return (
-    <Card sx={{mb: '10px',  minWidth: '420px'}}>
+    <Card sx={{mb: '50px',  minWidth: '420px'}}>
       <Typography variant='h6'>{name}</Typography>
       <CardContent style={{display: 'flex', justifyContent: 'space-between',}}>
         <div>

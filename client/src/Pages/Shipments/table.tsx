@@ -8,6 +8,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
+import {ReactComponent as ViewIcon} from '../../assets/view.svg';
+import {ReactComponent as EditIcon} from '../../assets/edit.svg';
+import {ReactComponent as TrashIcon} from '../../assets/trash.svg';
+
 function createData(
   id: string,
   pickup: string,
@@ -71,6 +75,7 @@ const ShipmentTable: React.FC = () => {
             <TableCell sx={{ fontSize: '16px', color: '#9599A2' }}>Cost</TableCell>
             <TableCell sx={{ fontSize: '16px', color: '#9599A2' }}>Driver</TableCell>
             <TableCell sx={{ fontSize: '16px', color: '#9599A2' }}>Status</TableCell>
+            <TableCell sx={{ fontSize: '16px', color: '#9599A2' }}>Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -101,6 +106,11 @@ const ShipmentTable: React.FC = () => {
               </TableCell>
               <TableCell sx={{ fontSize: '16px' }} component="th" scope="row">
                 {row.status}
+              </TableCell>
+              <TableCell sx={{ fontSize: '16px' }} component="th" scope="row">
+                  <ViewIcon style={{marginRight: '10px'}}/>
+                  <EditIcon style={{marginRight: '10px'}}/>
+                  <TrashIcon style={{marginRight: '10px'}}/>
               </TableCell>
             </TableRow>
           ))}
