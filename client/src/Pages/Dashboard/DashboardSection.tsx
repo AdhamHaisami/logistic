@@ -14,9 +14,9 @@ function DashboardSection() {
           <Typography>Quick start</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <MyCard title='Total Shipments' number='31,454' />
-              <MyCard title='Total Shipments' number='31,454' />
-              <MyCard title='Total Shipments' number='31,454' />
-              <MyCard title='Total Shipments' number='31,454' />
+              <MyCard title='Pending approval' number='31,454' />
+              <MyCard title='New Clients this month' number='31,454' />
+              <MyCard title='Returning clients' number='31,454' />
             
           </Box>
           <Box sx={{display: 'flex', justifyContent: 'space-between', mt: '20px'}}>
