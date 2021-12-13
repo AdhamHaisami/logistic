@@ -10,33 +10,25 @@ import { useSelector } from 'react-redux';
 
 
 function DashboardSection() {
-  const state = useSelector((state: any) => state.cards );
-  console.log(state, 'hii');
+  const cards = useSelector((state: any) => state.cards );
+  const shipmentsCards = useSelector((state: any) => state.shipments );
+  
   
   return (
     <Box sx={{width: '65%', margin: '20px 5px'}} >
           <Typography variant='h4'>Dashboard</Typography>
-          <Typography>Dashboard</Typography>
           <Typography>Quick start</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <MyCard title='Total Shipments' number={state.total} />
-              <MyCard title='Pending approval' number={state.pending} />
-              <MyCard title='New Clients this month' number={state.newClients} />
-              <MyCard title='Returning clients' number={state.returningClients} />
-            
+              {cards.map((card: any) => <MyCard title={card.title} number = {card.number} /> )}            
           </Box>
           <Box sx={{display: 'flex', justifyContent: 'space-between', mt: '20px'}}>
             <Box>
-              <Typography variant='h5' fontWeight='bold' sx={{mb: '20px'}}>Shipments</Typography>
-              <ShipmentCard name='adham hai' from='gaza' to='Rafah' date='22/1/2022' time='11:00 - 12:00' status='Done'/>
-              <ShipmentCard name='adham hai' from='gaza' to='Rafah' date='22/1/2022' time='11:00 - 12:00' status='Done'/>
-              <ShipmentCard name='adham hai' from='gaza' to='Rafah' date='22/1/2022' time='11:00 - 12:00' status='Done'/>
+              <Typography variant='h5' sx={{mb: '20px'}}>Shipments</Typography>
+              
+              {shipmentsCards.map((state: any) => <ShipmentCard name={state.name} from={state.location.from} to={state.location.to} date={state.date} time={`${state.time.from} - ${state.time.to}`} status={state.status} />)}
             </Box>
             <Box sx={{width: '100%'}}>
-              <Typography variant='h5' fontWeight='bold' sx={{mb: '20px'}}>Statistics</Typography>
-              <div>
-               <canvas id="myChart" width="100%" height="400"></canvas>
-              </div>
+              <Typography variant='h5'  sx={{mb: '20px'}}>Statistics</Typography>
             </Box>
           </Box>
         </Box>
