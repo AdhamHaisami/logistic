@@ -5,18 +5,24 @@ import Box from '@mui/material/Box';
 import MyCard from '../../Components/Card';
 import ShipmentCard from '../../Components/shipmentCard';
 
+import { useSelector } from 'react-redux';
+
+
 
 function DashboardSection() {
+  const state = useSelector((state: any) => state.cards );
+  console.log(state, 'hii');
+  
   return (
     <Box sx={{width: '65%', margin: '20px 5px'}} >
           <Typography variant='h4'>Dashboard</Typography>
           <Typography>Dashboard</Typography>
           <Typography>Quick start</Typography>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <MyCard title='Total Shipments' number='31,454' />
-              <MyCard title='Pending approval' number='31,454' />
-              <MyCard title='New Clients this month' number='31,454' />
-              <MyCard title='Returning clients' number='31,454' />
+              <MyCard title='Total Shipments' number={state.total} />
+              <MyCard title='Pending approval' number={state.pending} />
+              <MyCard title='New Clients this month' number={state.newClients} />
+              <MyCard title='Returning clients' number={state.returningClients} />
             
           </Box>
           <Box sx={{display: 'flex', justifyContent: 'space-between', mt: '20px'}}>

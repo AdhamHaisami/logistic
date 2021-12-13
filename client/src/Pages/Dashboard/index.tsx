@@ -8,7 +8,6 @@ import {State} from '../../redux';
 
 const Dashboard: React.FC = () => {
  const state =  useSelector((state: any) => state.shipments);
- console.log(state,111 );
  
   return (
     <Box sx={{display: 'flex'}}>
