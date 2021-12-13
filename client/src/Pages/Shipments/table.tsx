@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
+
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -12,55 +14,9 @@ import {ReactComponent as ViewIcon} from '../../assets/view.svg';
 import {ReactComponent as EditIcon} from '../../assets/edit.svg';
 import {ReactComponent as TrashIcon} from '../../assets/trash.svg';
 
-function createData(
-  id: string,
-  pickup: string,
-  dropOff: string,
-  shipmentDate: string,
-  dateAdd: string,
-  cost: number,
-  driver: string,
-  status: string
-) {
-  return { id, pickup, dropOff, shipmentDate, dateAdd, cost, driver, status };
-};
-
-const rowsArr = [
-  {
-    id: 'abvdfdfds',
-    pickup: 'Gaza, abc',
-    dropOff: 'Rafah, abc',
-    shipmentDate: 'April 22, 2021',
-    dateAdd: 'April 22, 2021',
-    cost: 20,
-    driver: 'Mohammed Ahmed',
-    status: 'done'
-  },
-  {
-    id: 'abvdfdfds',
-    pickup: 'Gaza, abc',
-    dropOff: 'Rafah, abc',
-    shipmentDate: 'April 22, 2021',
-    dateAdd: 'April 22, 2021',
-    cost: 20,
-    driver: 'Mohammed Ahmed',
-    status: 'done'
-  },
-  {
-    id: 'abvdfdfds',
-    pickup: 'Gaza, abc',
-    dropOff: 'Rafah, abc',
-    shipmentDate: 'April 22, 2021',
-    dateAdd: 'April 22, 2021',
-    cost: 20,
-    driver: 'Mohammed Ahmed',
-    status: 'done'
-  }
-];
-
-const rows = rowsArr.map(({ id, pickup, dropOff, shipmentDate, dateAdd, cost, driver, status}) => createData( id, pickup, dropOff, shipmentDate, dateAdd, cost, driver, status));
-
 const ShipmentTable: React.FC = () => {
+  const shipments = useSelector((state: any) => state.shipments);
+  
   return(
     <TableContainer component={Paper} sx={{ ml: '2rem' }} elevation={0}>
     <Box>
@@ -79,7 +35,7 @@ const ShipmentTable: React.FC = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {shipments.map((row: any) => (
             <TableRow>
               <TableCell component="th" scope="row">
                 <Box sx={{ display: 'flex', fontSize: '16px' }}>

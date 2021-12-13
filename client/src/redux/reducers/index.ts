@@ -1,15 +1,17 @@
 import {combineReducers} from 'redux';
 
-import shipmentReducer from './shipmentsCards';
+import shipmentCardsReducer from './shipmentsCards';
 import cardReducer from './cardReducer';
 import  notificationsReducer from './notifications'
 import userReducer from './user';
+import shipmentReducer from './shipments'
 
 const reducers = combineReducers({
   user: userReducer,
-  shipmentsCards: shipmentReducer,
+  shipmentsCards: shipmentCardsReducer,
   cards: cardReducer,
-  notifications: notificationsReducer
+  notifications: notificationsReducer,
+  shipments: shipmentReducer
 
 });
 

@@ -16,6 +16,6 @@ const Dashboard: React.FC = () => {
       <Notifications name={user.name} />
     </Box>
   );
-}
+};
 
 export default Dashboard;
