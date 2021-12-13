@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 
 function DashboardSection() {
   const cards = useSelector((state: any) => state.cards );
-  const shipmentsCards = useSelector((state: any) => state.shipments );
+  const shipmentsCards = useSelector((state: any) => state.shipmentsCards );
   
   
   return (

@@ -17,10 +17,6 @@ import Dashboard from './Pages/Dashboard';
 import Shipments from './Pages/Shipments';
 
 const App: React.FC = () => {
-  const dispatch = useDispatch();
-  const {addShipment }  = bindActionCreators(actionCreators, dispatch)
-  const state = useSelector((state: State) => console.log(state.shipments));
-  
   return (
       <Router>
         <Routes>

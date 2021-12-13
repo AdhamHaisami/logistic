@@ -7,13 +7,13 @@ import DashboardSection from './DashboardSection';
 import {State} from '../../redux';
 
 const Dashboard: React.FC = () => {
- const state =  useSelector((state: any) => state.shipments);
+  const user = useSelector((state: any) => state.user)
  
   return (
     <Box sx={{display: 'flex'}}>
       <SideNav  />    
       <DashboardSection />
-      <Notifications name= {state.name}/>
+      <Notifications name={user.name} />
     </Box>
   );
 }
